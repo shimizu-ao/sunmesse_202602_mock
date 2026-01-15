@@ -169,6 +169,10 @@ main {
 }
 
 /* #product */
+.makerSlider .swiper-slide a:not(:last-child) {
+  margin-bottom: 10px;
+  display: block;
+}
 .makerCat {
   padding-top: 25px;
 }
@@ -218,12 +222,40 @@ main {
   align-items: baseline;
   font-weight: 700;
   font-size: 29px;
+  color: #2d2d2d;
 }
 #status .statusActiveTxt .statusActiveNum {
   margin-left: 10px;
   color: var(--red);
   font-family: var(--ff_axis);
   font-size: 60px;
+}
+#status .statusDataWrap2 {
+  height: 55px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  padding: 0 15px;
+  border: 2px solid var(--blue);
+}
+#status .statusData_label2 {
+  color: var(--blue);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.1;
+}
+#status .statusData_Count2 {
+  position: relative;
+  bottom: -3px;
+  text-align: right;
+  font-weight: 700;
+  font-size: 20px;
+}
+#status .statusData_Num2 {
+  margin-right: 10px;
+  font-family: var(--ff_axis);
+  font-size: 36px;
 }
 #status .statusTxt1 {
   margin: 20px 0;
