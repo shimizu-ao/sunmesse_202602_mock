@@ -703,8 +703,13 @@ button {
 .dataList_item {
   display: flex;
   align-items: center;
+  height: 40px;
   font-size: 17px;
   font-weight: 600;
+}
+.dataList_item.active {
+  background: var(--red);
+  color: #fff;
 }
 .dataList_item .img {
   width: 30px;
@@ -779,32 +784,11 @@ button {
 
 /* ----------抽選結果 --------------*/
 /* 当たり */
-.atari .atariBg {
-  padding: 0 0 70px;
-  background: url(../img/second/bg_complete.png) repeat-y center / 100%;
+.atariPrize li {
+  padding: 0 2.5% 25px;
 }
-.atari .electCont {
-  margin-top: -50px;
-  position: relative;
-}
-.atari .electCont::before,
-.atari .electCont::after {
-  content: "";
-  position: absolute;
-}
-.atari .electCont::before {
-  width: 60px;
-  height: 75px;
-  top: 10px;
-  left: 5px;
-  background: url(../img/second/fu.png) no-repeat center / contain;
-}
-.atari .electCont::after {
-  width: 45px;
-  height: 50px;
-  top: -45px;
-  right: 0;
-  background: url(../img/second/ji.png) no-repeat center bottom / contain;
+.atariData .dataList_item {
+  padding: 0 2.5%;
 }
 
 /* はずれ */
