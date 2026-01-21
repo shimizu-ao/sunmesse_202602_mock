@@ -1,0 +1,2393 @@
+/** @format */
+
+@charset 'utf-8';
+/* ============ STYLE ============ */
+body {
+  width: 100%;
+  font-family: "Noto Sans JP", sans-serif;
+  color: #000;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5;
+}
+section {
+  position: relative;
+  font-weight: 500;
+  font-family: "Noto Sans JP", sans-serif;
+  z-index: 1;
+}
+a {
+  display: block;
+  text-decoration: none;
+  color: #000;
+}
+a:hover {
+  cursor: pointer;
+  opacity: 0.9;
+}
+*:focus {
+  outline: none;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+button {
+  width: 100%;
+  border: none;
+  background: none;
+  padding: 0;
+  position: relative;
+  cursor: pointer;
+}
+body.scroll-disable {
+  overflow: hidden;
+}
+
+.pc {
+  display: block !important;
+}
+.sp {
+  display: none !important;
+}
+@media only screen and (max-width: 640px) {
+  .pc {
+    display: none !important;
+  }
+  .sp {
+    display: block !important;
+  }
+}
+
+/* 事前エントリー */
+/* .entry .ent_before {
+	display: block;
+}
+.entry .ent_after {
+	display: none;
+}
+.ent_before {
+	display: none;
+}
+.ent_after {
+	display: block;
+} */
+
+/* layout */
+.wrap {
+  width: 375px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+@media only screen and (max-width: 640px) {
+  .wrap {
+    width: 100%;
+  }
+}
+
+/* font */
+@font-face {
+  font-family: "axisB";
+  src:
+    url(../font/AxisStd-B.ttf) format("truetype"),
+    url(../font/AxisStd-B.woff) format("woff");
+}
+@font-face {
+  font-family: "axisH";
+  src:
+    url(../font/AxisStd-Heavy.ttf) format("truetype"),
+    url(../font/AxisStd-Heavy.woff) format("woff");
+}
+
+:root {
+  --pink: #ff92a2;
+  --yellow: #ffee00;
+  --blue: #1fa5ff;
+  --line: rgba(255, 238, 0, 0.2);
+  --ffB: "axisB", sans-serif;
+  --ffH: "axisH", sans-serif;
+}
+
+/* bg */
+.bg {
+  background: var(--pink);
+}
+.bg01 {
+  background: url(../img/lp/bg.png) repeat-y center / 100%;
+}
+.bg02 {
+  background: url(../img/second/bg.png) repeat-y center / 100%;
+}
+
+.frame {
+  width: 90%;
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+  background: #fff;
+  z-index: 1;
+  border: 2px solid #000;
+}
+
+/* ttl */
+.ttl {
+  width: 72%;
+  margin: 0 auto -15px;
+}
+
+/* btn */
+.btn {
+  position: relative;
+  width: 100%;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  border-radius: 3px;
+  font-family: var(--ff_axisB);
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.05em;
+}
+.btn.arrow::after {
+  content: "";
+  position: absolute;
+  right: 20px;
+  width: 10px;
+  height: 10px;
+  border-top: solid 2px #fff;
+  border-right: solid 2px #fff;
+  transform: rotate(45deg);
+}
+.btn01,
+.btn02 {
+  color: #fff;
+  background: var(--blue);
+}
+.btn02 {
+  height: 50px;
+  font-size: 20px;
+}
+.btn02 .arrow {
+  right: 20px;
+}
+
+.btnPd {
+  background: #e60012;
+}
+.btnApply {
+  background: var(--gray);
+  color: #fff;
+}
+.btnBack {
+  color: #fff;
+  background: var(--gray);
+}
+.btnBack::after {
+  border-top: 1px solid #fff;
+  border-right: 1px solid #fff;
+}
+.btnLotto {
+  background: var(--color-yellow);
+  font-size: 20px;
+  background: #9e9e9e;
+}
+.btnLotto.active {
+  background: var(--bg);
+}
+.btnLotto > input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  color: #fff;
+  pointer-events: none;
+}
+.btnSearch {
+  background: #fff;
+  border: 1px solid var(--blue);
+  color: var(--blue);
+}
+.btnSearch::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background: url(../img/second/search.png) no-repeat center / cover;
+}
+.btnCoupon {
+  height: 40px;
+  color: #fff;
+}
+
+/* -----------202602-point ----------- */
+
+/* -----------キャンペーン内容 ----------- */
+.pdCat_num {
+  width: 88%;
+  margin: 0 auto 5px;
+  position: relative;
+}
+.pdCat_num::after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #000;
+}
+.pdCat_num span {
+  display: inline-block;
+  position: relative;
+  padding: 0 10px;
+  background: #fff;
+  z-index: 1;
+}
+.pdCat_num img {
+  margin: 0 auto;
+  width: 35px;
+}
+.pdCat_name {
+  line-height: 1.2;
+  display: inline-block;
+  font-weight: 700;
+  font-size: 22px;
+  background: linear-gradient(transparent calc(100% - 6px), var(--line) 6px);
+  font-family: var(--ff_axisB);
+}
+
+/* -----------対象商品一例 ----------- */
+
+/* -----------バナー ----------- */
+.bnr02 img {
+  border: 2px solid #fff;
+  border-bottom: 0;
+}
+.bnrBtn01,
+.bnrBtn02 {
+  width: 100%;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 700;
+}
+.bnrBtn01 {
+  background: #00913a;
+  color: #fff;
+}
+.bnrBtn02 {
+  background: #fccb00;
+}
+.bnrBtn01::after,
+.bnrBtn02::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  border-left: 8px solid #000;
+  border-right: 0;
+  transform: rotate(-3deg);
+}
+.bnrBtn01::after {
+  border-left: 8px solid #fff;
+}
+
+/* ----------注意書き --------------*/
+.noteList {
+  font-size: 12px;
+  line-height: 1.4;
+}
+.noteList li {
+  padding-left: 1em;
+  text-indent: -1em;
+}
+.noteList li::before {
+  content: "\203B";
+}
+/* ※をなしの場合 */
+.noteList li.symbolNo {
+  padding-left: 0;
+  text-indent: 0;
+}
+.noteList li.symbolNo::before {
+  content: none;
+}
+
+/* 参加の流れ */
+
+.stepWrap {
+  width: 88%;
+  margin-right: auto;
+  margin-left: auto;
+}
+.stepTitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.stepTitleTxt {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.1;
+  flex: 1;
+}
+.stepNo {
+  width: 40px;
+}
+.stepTxt {
+  margin-top: 15px;
+}
+.stepDesc {
+  font-size: 15px;
+}
+.stepArrow {
+  width: 90%;
+  height: 1px;
+  margin: 30px auto;
+  background: #000;
+}
+
+/* セイムスアプリ限定スタイル */
+.stepAppTxt {
+  margin: 20px 0 5px;
+  font-weight: 500;
+  font-size: 12px;
+  text-align: center;
+  line-height: 1.1;
+  white-space: nowrap;
+  color: var(--blue);
+}
+.stepAppTxt2 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 66%;
+  height: 25px;
+  margin: 60px auto -10px;
+  background: var(--yellow);
+  z-index: 1;
+  border-radius: 11px;
+  font-weight: 700;
+  font-size: 15px;
+  font-family: var(--ff_axisB);
+}
+/* .stepAppTxt2::before,
+.stepAppTxt2::after {
+  content: "";
+  width: 2px;
+  height: 20px;
+  background: #fff;
+}
+.stepAppTxt2::before {
+  transform: rotate(-45deg);
+}
+.stepAppTxt2::after {
+  transform: rotate(45deg);
+} */
+
+/* ダウンロードボタン */
+
+.downloadWrap,
+.downloadWrap2 {
+  width: 270px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 15px 25px;
+  position: relative;
+  text-align: center;
+  background: #fff;
+  outline: 3px solid rgba(255, 146, 162, 0.3);
+  outline-offset: -3px;
+}
+.downloadWrap2 {
+  padding-top: 20px;
+}
+.downloadTitle {
+  color: var(--red);
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.1;
+}
+
+.downloadBtnWrap {
+  margin-top: 10px;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.downloadBtn {
+  width: 48%;
+}
+.downloadBtn1 {
+  width: 41%;
+}
+.downloadBtn2 {
+  width: 50%;
+}
+
+/* 参加フォーム */
+.formTxt {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.3;
+  text-align: center;
+}
+.agreeWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  font-size: 16px;
+}
+.agreeWrap * {
+  cursor: pointer;
+}
+.agreeWrap input[type="checkbox"] {
+  position: relative;
+  width: 14px;
+  height: 14px;
+  border: 1px solid #000;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.agreeWrap input[type="checkbox"]:checked:before {
+  position: absolute;
+  top: -8px;
+  left: 2px;
+  transform: rotate(50deg);
+  width: 10px;
+  height: 18px;
+  border-right: 2px solid var(--blue);
+  border-bottom: 2px solid var(--blue);
+  content: "";
+}
+
+/* お客様情報のご確認 */
+.txtWrap {
+  margin: 30px 0;
+  padding: 25px 0;
+  border: 1px solid #fff;
+}
+.txtWrap_ttl {
+  padding-bottom: 20px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.2;
+}
+.txtWrap_ttl_txt {
+  font-size: 12px;
+  line-height: 1.4;
+}
+.txtWrap_ttl_txt span {
+  font-weight: 500;
+}
+
+/* -----------参加完了 ----------- */
+.completeBg {
+  padding: 130px 0 110px;
+  background: url(../img/second/bg_complete.png) no-repeat center top / 100%;
+}
+.completeTxt {
+  margin: 0 auto 30px;
+}
+
+/* -----------参加状況 ----------- */
+.statusFrame {
+  position: relative;
+  background: #fff;
+  z-index: 1;
+  border: 2px solid #000;
+  border-radius: 30px;
+}
+.status01 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px 10px;
+}
+.status01 li {
+  padding-bottom: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: calc(100% / 2 - 5px);
+  border: 1px solid;
+  border-radius: 4px;
+}
+.status01_cat {
+  margin-top: -20px;
+  width: 35px;
+}
+.status01_txt {
+  width: 90%;
+  height: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px auto;
+  color: var(--blue);
+  color: #fff;
+  background: #000;
+  border-radius: 10px;
+  font-family: var(--ff_axisB);
+  font-weight: 700;
+  font-size: 15px;
+}
+.status01_data {
+  margin-top: auto;
+  line-height: 1;
+  font-family: var(--ff_axisH);
+  font-size: 24px;
+  font-weight: 900;
+}
+.status01_dataNum {
+  padding-right: 5px;
+  font-size: 54px;
+}
+.statusArrow {
+  margin: 15px auto;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-right: 19px solid transparent;
+  border-left: 19px solid transparent;
+  border-top: 20px solid;
+  border-bottom: 0;
+}
+.status02 {
+  padding: 10px 15px;
+  background: var(--line);
+  border-radius: 5px;
+}
+.status02_ttl {
+  padding-bottom: 5px;
+  text-align: center;
+  font-weight: 700;
+  font-family: var(--ff_axisB);
+  font-size: 18px;
+  border-bottom: 1px solid #000;
+}
+.status02_wrap {
+  margin-top: 10px;
+  padding: 0 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 28px;
+  font-family: var(--ff_axisH);
+  font-weight: 900;
+  line-height: 1;
+}
+.status02_data {
+  position: relative;
+  top: -5px;
+  font-size: 30px;
+}
+.status02_dataNum {
+  padding-right: 10px;
+  font-size: 60px;
+  letter-spacing: -0.03em;
+}
+.statusTxt1 {
+  padding-top: 20px;
+  position: relative;
+  font-weight: 800;
+  font-size: 18px;
+  text-align: center;
+  color: var(--red1);
+  line-height: 1.3;
+  border-top: 1px solid #000;
+  font-family: var(--ff_mp);
+}
+.statusTxt2 {
+  margin-top: 10px;
+  font-size: 16px;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+/* 参加状況切替クラス */
+#status .itemNo,
+#status .itemActive,
+#status .itemEnd,
+#status .itemMax {
+  display: none;
+}
+#status.statusNo .itemNo,
+#status.statusActive .itemActive,
+#status.statusEnd .itemEnd,
+#status.statusMax .itemMax {
+  display: block;
+}
+#status.statusActive .status02_dataNum {
+  color: #e50000;
+}
+
+/* -----------結果発表 ----------- */
+.resultTxt {
+  position: relative;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+}
+.resultTxt::before,
+.resultTxt::after {
+  content: "";
+  width: 25px;
+  height: 145px;
+  position: absolute;
+  top: -20px;
+  background: url(../img/second/result-parts.png) no-repeat center / cover;
+}
+.resultTxt::before {
+  left: 0;
+}
+.resultTxt::after {
+  right: 0;
+  transform: scale(-1, 1);
+}
+.resultCountTtl {
+  margin: 30px auto 5px;
+  width: 60%;
+}
+.resultCountWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 90px;
+  line-height: 1.3;
+  font-weight: 700;
+  font-size: 18px;
+}
+.resultCountWrap .resultPointData {
+  position: relative;
+  top: -5px;
+  color: #1d2088;
+  font-size: 26px;
+  font-family: "Axis", sans-serif;
+  font-weight: 900;
+}
+.resultCountWrap .resultPointData .pointCount {
+  font-size: 52px;
+}
+
+/* マイページ賞品応募 */
+.prizeWrap {
+  margin-top: 40px;
+}
+.prizeImg {
+  margin-bottom: 15px;
+}
+
+/* 〇口応募済みです */
+.applyPastTxt {
+  display: none;
+  align-items: baseline;
+  justify-content: center;
+  font-weight: 500;
+}
+.apply .applyPastTxt {
+  display: flex;
+}
+.applyPastTxt span {
+  font-weight: 700;
+  font-size: 22px;
+}
+.applyPastTxt::before,
+.applyPastTxt::after {
+  content: "";
+  width: 2px;
+  height: 15px;
+  background: var(--grad02);
+  border-radius: 2px;
+}
+.applyPastTxt::before {
+  margin-right: 10px;
+  transform: rotate(-30deg);
+}
+.applyPastTxt::after {
+  margin-left: 10px;
+  transform: rotate(30deg);
+}
+
+/* -----------wチャンス ----------- */
+.changeWrap {
+  margin: 50px auto 0;
+  width: 90%;
+  padding: 20px 0;
+  border-top: 1px solid var(--steelBlue);
+  border-bottom: 1px solid var(--steelBlue);
+}
+
+/* 切り替え */
+#chance {
+  display: none;
+}
+.clear #chance {
+  display: block;
+}
+
+/* -----------応募確認画面 ----------- */
+#apply_confirm {
+  text-align: center;
+}
+.confirmTxt {
+  margin: 20px auto 15px;
+  font-size: 18px;
+  font-weight: 700;
+}
+.confirmBtns {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* 切り替え */
+#apply_confirm .prizeItem01,
+#apply_confirm .prizeItem02,
+#apply_confirm .prizeItem03 {
+  display: none;
+}
+#apply_confirm.prize01 .prizeItem01,
+#apply_confirm.prize02 .prizeItem02,
+#apply_confirm.prize03 .prizeItem03 {
+  display: block;
+}
+
+/* -----------応募完了 ----------- */
+#apply_complete {
+  text-align: center;
+}
+.applyTxt {
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* -----------クーポン ----------- */
+.couponDate {
+  margin-top: 5px;
+  text-align: center;
+  color: var(--tokiwa);
+  font-weight: 700;
+  font-size: 16px;
+}
+.couponListWrap {
+  margin: 30px auto 20px;
+  padding: 20px 0;
+  background: var(--lily);
+}
+.couponListTtl {
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 15px;
+  color: var(--tokiwa);
+  font-weight: 700;
+}
+.couponListTtl::before,
+.couponListTtl::after {
+  content: "";
+  width: 1.5px;
+  height: 20px;
+  position: relative;
+  bottom: -5px;
+  background: var(--tokiwa);
+  border-radius: 2px;
+}
+.couponListTtl::before {
+  transform: rotate(-40deg);
+}
+.couponListTtl::after {
+  transform: rotate(40deg);
+}
+.couponList {
+  font-size: 14px;
+  line-height: 1.2;
+}
+.couponList li {
+  display: flex;
+  align-items: first baseline;
+  justify-content: center;
+  gap: 5px;
+  margin-bottom: 5px;
+}
+.couponList li span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+.couponList li:nth-child(odd) span {
+  background: var(--tokiwa);
+}
+.couponList li:nth-child(even) span {
+  border: 1px solid var(--tokiwa);
+  box-sizing: border-box;
+}
+.couponList li p {
+  width: calc(100% - 12px);
+}
+
+/* 使用済み */
+.couponWrap.end .before,
+.couponWrap .after {
+  display: none;
+}
+.couponWrap .before,
+.couponWrap.end .after {
+  display: block;
+}
+.couponWrap.end {
+  pointer-events: none;
+}
+.couponWrap.end .btnCoupon {
+  background: #9e9e9e;
+}
+
+/* 当選者のみ */
+#status #coupon {
+  display: none;
+}
+#status.atari #coupon {
+  display: block;
+}
+
+/* -----------抽選発表 ----------- */
+#lotto {
+  padding: 45px 0 70px;
+  text-align: center;
+}
+.lottoTxt {
+  font-weight: 500;
+  font-size: 16px;
+}
+.lottoTxt span {
+  display: inline-block;
+  border-bottom: 1px solid #fff;
+}
+
+/* 当たり */
+.atariTxt {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 10px;
+  font-weight: 500;
+  font-size: 20px;
+}
+.atariTxt::before,
+.atariTxt::after {
+  content: "";
+  height: 23px;
+  width: 2px;
+  position: relative;
+  bottom: -5px;
+  background-color: #fff;
+  border-radius: 2px;
+}
+.atariTxt::before {
+  transform: rotate(-30deg);
+}
+.atariTxt::after {
+  transform: rotate(30deg);
+}
+
+/* hazure */
+
+/* -----------エラー ----------- */
+.errorCont {
+  padding: 50px 0 40px;
+  background-color: #fff;
+  color: #000;
+  text-align: center;
+}
+.errorTxt1 {
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 17px;
+}
+.errorTxt2 {
+  line-height: 1.2;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+/* -----------------------
+  アコーディオン
+-------------------------- */
+.toggle_contents_other {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  padding: 0;
+}
+.toggle_title_other {
+  background: #000;
+  color: #fff;
+}
+.toggle_btn_other {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  display: block;
+  width: 20px;
+  height: 20px;
+  transition: all 0.3s ease;
+}
+.toggle_btn_other:before,
+.toggle_btn_other:after {
+  display: block;
+  content: "";
+  background-color: #fff;
+  position: absolute;
+  width: 15px;
+  height: 2px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.3s;
+}
+.toggle_title_other.selected .toggle_btn_other {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%) rotate(90deg);
+}
+.toggle_title_other.selected .toggle_btn_other:after {
+  content: normal;
+}
+
+/* 規約アコーディオン */
+.toggle_title_other.rule_btn {
+  margin-top: 20px;
+  border: 1px solid #000;
+  color: #000;
+  background: #fff;
+}
+
+.toggle_btn_other.rule_toggle:before,
+.toggle_btn_other.rule_toggle:after {
+  background-color: #000;
+}
+
+.toggle_btn_other:before {
+  width: 2px;
+  height: 15px;
+}
+
+@media only screen and (min-width: 641px) {
+  .toggle_btn_other:before,
+  .toggle_btn_other:after {
+    width: 15px;
+    height: 2px;
+  }
+
+  .toggle_btn_other:before {
+    width: 2px;
+    height: 15px;
+  }
+}
+@media only screen and (min-width: 641px) {
+  .toggle_btn:before,
+  .toggle_btn:after {
+    width: 15px;
+    height: 2px;
+  }
+
+  .toggle_btn:before {
+    width: 2px;
+    height: 15px;
+  }
+}
+
+/* アコーディオン中身 */
+.toggle_contents_other dd {
+  display: none;
+  padding: 15px 5px 10px 0;
+  font-size: 12px;
+  line-height: 1.3;
+}
+.toggle_contents_other_bk {
+  width: 100%;
+  text-align: justify;
+  max-height: 50vh;
+  overflow-y: scroll;
+}
+.toggle_contents_other_bk::-webkit-scrollbar {
+  background: transparent;
+  width: 5px;
+  height: 15px;
+  border-radius: 20px;
+}
+.toggle_contents_other_bk::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 20px;
+}
+.productList {
+  width: 100%;
+}
+.productList li {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 5px;
+  font-size: 14px;
+  line-height: 1.3;
+}
+
+/* アコーディオン2列の場合 */
+.productList .productName {
+  width: 80%;
+}
+.productList .productData {
+  width: 20%;
+  text-align: right;
+}
+
+/* アコーディオンメーカー名が入る */
+.makerWrap {
+  margin-top: 25px;
+}
+.makerName {
+  position: relative;
+  margin-bottom: 10px;
+}
+.makerName::before {
+  content: "";
+  width: 100%;
+  height: 4px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  background-image: radial-gradient(circle, var(--blue) 1.5px, transparent 1.5px);
+  background-position: left top;
+  background-repeat: repeat-x;
+  background-size: 11px 3px;
+  transform: translateY(-50%);
+}
+.makerName span {
+  position: relative;
+  margin: 0 auto;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--blue);
+  border-radius: 50%;
+  color: #fff;
+  font-family: var(--ff_axisH);
+  font-size: 16px;
+  z-index: 1;
+}
+
+/* タブ切り替え */
+.change_wrap {
+  margin-bottom: 25px;
+  border: 2px solid #fff;
+}
+.tab_wrap {
+  display: flex;
+}
+.tab_wrap .tab {
+  padding: 10px 0;
+  width: 50%;
+  text-align: center;
+  font-size: 32px;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+  border-bottom: 1px solid #fff;
+  box-sizing: border-box;
+}
+.tab_wrap .tab.active {
+  background: #fff;
+  border: none;
+}
+.tab_wrap .tab01.active {
+  color: var(--color-blue);
+}
+.tab_wrap .tab02.active {
+  color: var(--color-orange);
+}
+.panel {
+  padding: 20px 0;
+  display: none;
+}
+.panel.active {
+  display: block;
+}
+
+/* -----------------------
+  common
+-------------------------- */
+.inner {
+  width: 375px;
+  max-width: 90%;
+  margin: 0 auto;
+}
+.inner94 {
+  width: 375px;
+  max-width: 94%;
+  margin: 0 auto;
+}
+.inner95 {
+  width: 375px;
+  max-width: 95%;
+  margin: 0 auto;
+}
+.inner90 {
+  width: 375px;
+  max-width: 90%;
+  margin: 0 auto;
+}
+.inner80 {
+  width: 80%;
+  max-width: 80%;
+  margin: 0 auto;
+}
+.inner84 {
+  width: 84%;
+  max-width: 84%;
+  margin: 0 auto;
+}
+.inner85 {
+  width: 85.6%;
+  max-width: 85.6%;
+  margin: 0 auto;
+}
+.inner88 {
+  width: 88%;
+  max-width: 88%;
+  margin: 0 auto;
+}
+.inner75 {
+  width: 375px;
+  max-width: 75%;
+  margin: 0 auto;
+}
+.inner70 {
+  width: 375px;
+  max-width: 70%;
+  margin: 0 auto;
+}
+.inner65 {
+  width: 375px;
+  max-width: 65%;
+  margin: 0 auto;
+}
+
+/* モーダル */
+.fix {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.modal {
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999;
+}
+
+.modal_bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 100;
+}
+
+.modal_inner {
+  /* display: none; */
+  position: absolute;
+  width: 90%;
+  max-width: 355px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  padding: 50px 0 40px;
+  z-index: 999;
+  text-align: center;
+}
+
+/* クーポンモーダル */
+.couponMdlTxt {
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+/*------------ Swiper-------------- */
+/* 商品スライドの名前 */
+.pdName {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+/* 対象ブランドロゴ */
+.makerSlider .swiper-slide img:first-child {
+  margin-bottom: 10px;
+}
+
+/* ページネーション */
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  margin: 20px auto 0;
+  position: relative;
+}
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 0 4px;
+}
+/* ページネーションのサイズと色 */
+.swiper-pagination-bullet {
+  margin: 0 !important;
+  height: 5px;
+  width: calc(100% / 23);
+  background-color: #e95377;
+  border-radius: 0;
+  opacity: 1;
+}
+.swiper-pagination-bullet-active {
+  position: relative;
+  background: #fff;
+  border: 1px solid #e95377;
+}
+
+/* swiper-scrollbar */
+.swiper-scrollbar {
+  margin: 20px auto;
+  position: initial !important;
+  width: 88% !important;
+  background: #000;
+}
+.swiper-scrollbar-drag {
+  background: var(--yellow);
+}
+
+/* -----------------------
+  form
+-------------------------- */
+input[type="text"],
+input[type="name"],
+input[type="number"],
+input[type="email"],
+input[type="tel"],
+input[type="postal-code"],
+input[type="password"] {
+  height: 48.2624px;
+  padding: 0 15px;
+  background: #f5f2f2;
+  border: solid 1px #d9d1ce;
+  z-index: 0 !important;
+}
+input[type="text"]:focus,
+input[type="name"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="postal-code"]:focus,
+input[type="password"]:focus {
+  background: #f5f2f2;
+  border: solid 1px #d9d1ce;
+  z-index: 0 !important;
+  outline: 0;
+}
+::placeholder {
+  color: #797979;
+  font-size: 16px;
+  font-weight: 400;
+}
+/* img */
+input[type="image"] {
+  width: 100%;
+}
+/* textarea */
+textarea {
+  width: 100%;
+  height: 200px;
+  padding: 10px 15px;
+  background: #eff2ff;
+  border: solid 1px #ababab;
+  border-radius: 5px;
+}
+textarea:focus {
+  border: 1px solid #ababab;
+  outline: 0;
+}
+
+/* checkbox */
+
+.checkSpan {
+  font-size: 16px;
+  letter-spacing: -0.5px;
+  font-weight: 500;
+}
+
+.userAgreeCheckSpan {
+  font-size: 16px;
+  letter-spacing: -0.5px;
+  font-weight: 500;
+  color: #000000;
+}
+
+.ruleAgreeCheck::before {
+  content: "";
+  display: block;
+  width: 23px;
+  height: 23px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  background-size: 100%;
+  background-image: url(../img/lp/check-before.png);
+  background-repeat: no-repeat;
+}
+.ruleAgreeCheck:checked::before {
+  border-color: #ffffff;
+}
+.ruleAgreeCheck:checked::after {
+  content: "";
+  width: 23px;
+  height: 23px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  background-size: 100%;
+  background-image: url(../img/lp/check_after.png);
+  background-repeat: no-repeat;
+}
+.checkboxWrap span {
+  font-size: 14px;
+  line-height: 2.6em;
+  letter-spacing: -1px;
+}
+
+.userAgree::before {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-60%);
+  background-size: 100%;
+  background-image: url(../img/lp/gray-white-check-before.png);
+  background-repeat: no-repeat;
+}
+
+.userAgree:checked::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-60%);
+  background-size: 100%;
+  background-image: url(../img/lp/gray-white-check-after.png);
+  background-repeat: no-repeat;
+}
+
+/* radio */
+input[type="radio"] {
+  display: none;
+}
+.radioInput {
+  appearance: none;
+  position: absolute;
+}
+
+/* select */
+select option {
+  color: #2b0e04;
+}
+select::-ms-expand {
+  display: none;
+}
+select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #828c9a;
+}
+
+/* -----------------------
+  kiyaku
+-------------------------- */
+.kiyakuMsg {
+  text-align: center;
+  color: #000000;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: -1.5px;
+  line-height: 1.6;
+  white-space: nowrap;
+}
+
+/* 参加フォームエラーメッセージ */
+.header_emesg {
+  padding: 1em;
+  color: #f00000;
+  font-size: 14px;
+  text-align: center;
+  line-height: 1.5em;
+}
+.msg {
+  color: #f00000;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+/*_tos 本キャンペーンの規約ページ用*/
+.frameWrap {
+  padding: 30px 0 40px;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.kiyakuBG {
+  /*各キャンペーンのバックグラウンドの設定に合わせる*/
+  background: linear-gradient(60deg, rgba(136, 209, 245, 1) 0%, rgba(0, 182, 238, 1) 100%);
+}
+
+/* -----------------------
+  fixed BTN
+-------------------------- */
+.fixBtnArea {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 375px;
+  margin: 0 auto;
+  z-index: 999;
+}
+
+@media only screen and (max-width: 640px) {
+  .fixBtnArea {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+.fixBtnItem {
+  width: 90%;
+}
+.fixBtnItem img:hover {
+  cursor: pointer;
+}
+.fixBtnItem > a {
+  display: block;
+  text-align: center;
+}
+
+.fixBtnTxt {
+  width: 64%;
+  margin: 0 auto;
+}
+/* .fixBtnTxt::before,
+.fixBtnTxt::after {
+    content: "";
+    position: relative;
+    bottom: -2px;
+    width: 2px;
+    height: 15px;
+    background: var(--green);
+}
+.fixBtnTxt::before {
+    transform: rotate(-30deg);
+}
+.fixBtnTxt::after {
+    transform: rotate(30deg);
+} */
+
+.lpFixBtnArea {
+  position: fixed;
+  bottom: 3px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100vw;
+  margin: 0 auto;
+  z-index: 100;
+  padding-top: 1.5px;
+}
+
+@media screen and (min-width: 641px) {
+  .lpFixBtnArea {
+    max-width: 375px;
+  }
+}
+
+/* -----------------------
+  footer
+-------------------------- */
+.footer {
+  margin: 0;
+  padding: 35px 0 25px;
+  font-size: 14px;
+  color: #000000;
+  letter-spacing: -0.9px;
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+#footerAttentionArea ul li {
+  padding-left: 1em;
+  text-indent: -1em;
+}
+.imgFooter {
+  width: 160px;
+  margin: 21px auto;
+}
+.footerBtnArea {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.btnFootNav {
+  position: relative;
+  width: 50%;
+  padding: 8px 0;
+  color: #fff;
+  text-align: center;
+  background-color: #000;
+  border: solid 1px #fff;
+}
+.btnFootNav a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+#footerNav {
+  list-style: none;
+  font-size: 14px;
+  text-align: center;
+  margin: 0 auto;
+  padding: 19px 0 16px;
+}
+#footerNav li {
+  padding: 0 2em;
+  line-height: 30px;
+  text-align: center;
+}
+#footerNav li:first-child {
+  border-left: none;
+}
+#footerNav li a {
+  text-decoration: none;
+  color: #000000;
+}
+.copyright {
+  font-size: 11px;
+  text-align: center;
+  line-height: 1.5em;
+  letter-spacing: 0.1px;
+}
+
+/* -----------------------
+  Parts
+-------------------------- */
+/* width */
+.w45 {
+  display: block;
+  width: 45%;
+  margin: 0 auto;
+}
+.w60 {
+  display: block;
+  width: 60%;
+  margin: 0 auto;
+}
+.w65 {
+  display: block;
+  width: 65%;
+  margin: 0 auto;
+}
+.w70 {
+  display: block;
+  width: 70%;
+  margin: 0 auto;
+}
+.w75 {
+  display: block;
+  width: 70%;
+  margin: 0 auto;
+}
+.w80 {
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+}
+.w85 {
+  display: block;
+  width: 85%;
+  margin: 0 auto;
+}
+.w90 {
+  display: block;
+  width: 90%;
+  margin: 0 auto;
+}
+.w95 {
+  display: block;
+  width: 95%;
+  margin: 0 auto;
+}
+
+/* margin */
+.m_auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* margin-top */
+.mt-150 {
+  margin-top: -150px;
+}
+.mt-100 {
+  margin-top: -100px;
+}
+.mt-70 {
+  margin-top: -70px;
+}
+.mt-30 {
+  margin-top: -30px;
+}
+.mt-20 {
+  margin-top: -20px;
+}
+.mt-10 {
+  margin-top: -10px;
+}
+
+.mt05 {
+  margin-top: 5px;
+}
+.mt10 {
+  margin-top: 10px;
+}
+.mt15 {
+  margin-top: 15px;
+}
+.mt20 {
+  margin-top: 20px;
+}
+.mt25 {
+  margin-top: 25px;
+}
+.mt30 {
+  margin-top: 30px;
+}
+.mt35 {
+  margin-top: 35px;
+}
+.mt40 {
+  margin-top: 40px;
+}
+.mt45 {
+  margin-top: 45px;
+}
+.mt50 {
+  margin-top: 50px;
+}
+.mt55 {
+  margin-top: 55px;
+}
+.mt60 {
+  margin-top: 60px;
+}
+.mt65 {
+  margin-top: 65px;
+}
+.mt70 {
+  margin-top: 70px;
+}
+.mt75 {
+  margin-top: 75px;
+}
+.mt80 {
+  margin-top: 80px;
+}
+.mt85 {
+  margin-top: 85px;
+}
+.mt90 {
+  margin-top: 90px;
+}
+.mt95 {
+  margin-top: 95px;
+}
+.mt100 {
+  margin-top: 100px;
+}
+.mt110 {
+  margin-top: 110px;
+}
+.mt120 {
+  margin-top: 120px;
+}
+.mt130 {
+  margin-top: 130px;
+}
+.mt140 {
+  margin-top: 140px;
+}
+.mt150 {
+  margin-top: 150px;
+}
+
+.mb0 {
+  margin-bottom: 0px;
+}
+.mb05 {
+  margin-bottom: 5px;
+}
+.mb10 {
+  margin-bottom: 10px;
+}
+.mb15 {
+  margin-bottom: 15px;
+}
+.mb20 {
+  margin-bottom: 20px;
+}
+.mb25 {
+  margin-bottom: 25px;
+}
+.mb30 {
+  margin-bottom: 30px;
+}
+.mb35 {
+  margin-bottom: 35px;
+}
+.mb40 {
+  margin-bottom: 40px;
+}
+.mb45 {
+  margin-bottom: 45px;
+}
+.mb50 {
+  margin-bottom: 50px;
+}
+.mb55 {
+  margin-bottom: 55px;
+}
+.mb60 {
+  margin-bottom: 60px;
+}
+.mb65 {
+  margin-bottom: 65px;
+}
+.mb70 {
+  margin-bottom: 70px;
+}
+.mb75 {
+  margin-bottom: 75px;
+}
+.mb80 {
+  margin-bottom: 80px;
+}
+.mb85 {
+  margin-bottom: 85px;
+}
+.mb90 {
+  margin-bottom: 90px;
+}
+.mb95 {
+  margin-bottom: 95px;
+}
+.mb100 {
+  margin-bottom: 100px;
+}
+.mb110 {
+  margin-bottom: 110px;
+}
+.mb120 {
+  margin-bottom: 120px;
+}
+.mb130 {
+  margin-bottom: 130px;
+}
+.mb140 {
+  margin-bottom: 140px;
+}
+.mb150 {
+  margin-bottom: 150px;
+}
+
+.ml_auto {
+  margin-left: auto;
+}
+.ml05 {
+  margin-left: 5px;
+}
+.ml10 {
+  margin-left: 10px;
+}
+.ml15 {
+  margin-left: 15px;
+}
+.ml20 {
+  margin-left: 20px;
+}
+.ml25 {
+  margin-left: 25px;
+}
+.ml30 {
+  margin-left: 30px;
+}
+.ml35 {
+  margin-left: 35px;
+}
+.ml40 {
+  margin-left: 40px;
+}
+.ml45 {
+  margin-left: 45px;
+}
+.ml50 {
+  margin-left: 50px;
+}
+.ml55 {
+  margin-left: 55px;
+}
+.ml60 {
+  margin-left: 60px;
+}
+.ml65 {
+  margin-left: 65px;
+}
+.ml70 {
+  margin-left: 70px;
+}
+.ml75 {
+  margin-left: 75px;
+}
+.ml80 {
+  margin-left: 80px;
+}
+.ml85 {
+  margin-left: 85px;
+}
+.ml90 {
+  margin-left: 90px;
+}
+.ml95 {
+  margin-left: 95px;
+}
+.ml100 {
+  margin-left: 100px;
+}
+.ml110 {
+  margin-left: 110px;
+}
+.ml120 {
+  margin-left: 120px;
+}
+.ml130 {
+  margin-left: 130px;
+}
+.ml140 {
+  margin-left: 140px;
+}
+.ml150 {
+  margin-left: 150px;
+}
+
+/* margin-right */
+.mr10 {
+  margin-right: 10px;
+}
+
+/* padding-top */
+.pt05 {
+  padding-top: 5px;
+}
+.pt10 {
+  padding-top: 10px;
+}
+.pt15 {
+  padding-top: 15px;
+}
+.pt20 {
+  padding-top: 20px;
+}
+.pt25 {
+  padding-top: 25px;
+}
+.pt30 {
+  padding-top: 30px;
+}
+.pt35 {
+  padding-top: 35px;
+}
+.pt40 {
+  padding-top: 40px;
+}
+.pt45 {
+  padding-top: 45px;
+}
+.pt50 {
+  padding-top: 50px;
+}
+.pt55 {
+  padding-top: 55px;
+}
+.pt60 {
+  padding-top: 60px;
+}
+.pt65 {
+  padding-top: 65px;
+}
+.pt70 {
+  padding-top: 70px;
+}
+.pt75 {
+  padding-top: 75px;
+}
+.pt80 {
+  padding-top: 80px;
+}
+.pt85 {
+  padding-top: 85px;
+}
+.pt90 {
+  padding-top: 90px;
+}
+.pt95 {
+  padding-top: 95px;
+}
+.pt100 {
+  padding-top: 100px;
+}
+.pt110 {
+  padding-top: 110px;
+}
+.pt120 {
+  padding-top: 120px;
+}
+.pt130 {
+  padding-top: 130px;
+}
+.pt140 {
+  padding-top: 140px;
+}
+.pt150 {
+  padding-top: 150px;
+}
+
+/* padding-bottom */
+.pb05 {
+  padding-bottom: 5px;
+}
+.pb10 {
+  padding-bottom: 10px;
+}
+.pb15 {
+  padding-bottom: 15px;
+}
+.pb20 {
+  padding-bottom: 20px;
+}
+.pb25 {
+  padding-bottom: 25px;
+}
+.pb30 {
+  padding-bottom: 30px;
+}
+.pb35 {
+  padding-bottom: 35px;
+}
+.pb40 {
+  padding-bottom: 40px;
+}
+.pb45 {
+  padding-bottom: 45px;
+}
+.pb50 {
+  padding-bottom: 50px;
+}
+.pb55 {
+  padding-bottom: 55px;
+}
+.pb60 {
+  padding-bottom: 60px;
+}
+.pb65 {
+  padding-bottom: 65px;
+}
+.pb70 {
+  padding-bottom: 70px;
+}
+.pb75 {
+  padding-bottom: 75px;
+}
+.pb80 {
+  padding-bottom: 80px;
+}
+.pb85 {
+  padding-bottom: 85px;
+}
+.pb90 {
+  padding-bottom: 90px;
+}
+.pb95 {
+  padding-bottom: 95px;
+}
+.pb100 {
+  padding-bottom: 100px;
+}
+.pb110 {
+  padding-bottom: 110px;
+}
+.pb120 {
+  padding-bottom: 120px;
+}
+.pb130 {
+  padding-bottom: 130px;
+}
+.pb140 {
+  padding-bottom: 140px;
+}
+.pb150 {
+  padding-bottom: 150px;
+}
+
+/* padding-left */
+.pl05 {
+  padding-left: 5px;
+}
+.pl10 {
+  padding-left: 10px;
+}
+.pl20 {
+  padding-left: 20px;
+}
+
+/* padding-right */
+.pr05 {
+  padding-right: 5px;
+}
+
+.pd05 {
+  padding: 5px;
+}
+.pd10 {
+  padding: 10px;
+}
+.pd15 {
+  padding: 15px;
+}
+.pd20 {
+  padding: 20px;
+}
+.pd25 {
+  padding: 25px;
+}
+.pd30 {
+  padding: 30px;
+}
+.pd35 {
+  padding: 35px;
+}
+.pd40 {
+  padding: 40px;
+}
+.pd45 {
+  padding: 45px;
+}
+.pd50 {
+  padding: 50px;
+}
+.pd55 {
+  padding: 55px;
+}
+.pd60 {
+  padding: 60px;
+}
+.pd65 {
+  padding: 65px;
+}
+.pd70 {
+  padding: 70px;
+}
+.pd75 {
+  padding: 75px;
+}
+.pd80 {
+  padding: 80px;
+}
+.pd85 {
+  padding: 85px;
+}
+.pd90 {
+  padding: 90px;
+}
+.pd95 {
+  padding: 95px;
+}
+
+/* text-align */
+.tal {
+  text-align: left;
+}
+.tac {
+  text-align: center;
+}
+.tar {
+  text-align: right;
+}
+.taj {
+  text-align: justify;
+}
+
+.len10per {
+  width: 10%;
+}
+.len20per {
+  width: 20%;
+}
+.len30per {
+  width: 30%;
+}
+.len40per {
+  width: 40%;
+}
+.len50per {
+  width: 50%;
+}
+.len60per {
+  width: 60%;
+}
+.len70per {
+  width: 70%;
+}
+.len80per {
+  width: 80%;
+}
+.len90per {
+  width: 90%;
+}
+.len100per {
+  width: 100%;
+}
+
+/* color */
+.colorB {
+  color: var(--color-blue);
+}
+.colorW {
+  color: #fff;
+}
+.colorG {
+  color: var(--tokiwa);
+}
+
+.fs10 {
+  font-size: 10px;
+}
+.fs11 {
+  font-size: 11px;
+}
+.fs12 {
+  font-size: 12px;
+}
+.fs13 {
+  font-size: 13px;
+}
+.fs14 {
+  font-size: 14px;
+}
+.fs15 {
+  font-size: 15px;
+}
+.fs16 {
+  font-size: 16px;
+}
+.fs17 {
+  font-size: 17px;
+}
+.fs18 {
+  font-size: 18px;
+}
+.fs19 {
+  font-size: 19px;
+}
+.fs20 {
+  font-size: 20px;
+}
+.fs21 {
+  font-size: 21px;
+}
+.fs22 {
+  font-size: 22px;
+}
+.fs23 {
+  font-size: 23px;
+}
+.fs24 {
+  font-size: 24px;
+}
+.fs25 {
+  font-size: 25px;
+}
+.fs26 {
+  font-size: 26px;
+}
+.fs27 {
+  font-size: 27px;
+}
+.fs28 {
+  font-size: 28px;
+}
+.fs29 {
+  font-size: 29px;
+}
+.fs30 {
+  font-size: 30px;
+}
+.fs32 {
+  font-size: 32px;
+}
+.fs34 {
+  font-size: 34px;
+}
+.fs40 {
+  font-size: 40px;
+}
+.fs45 {
+  font-size: 45px;
+}
+.fs55 {
+  font-size: 55px;
+}
+.fs60 {
+  font-size: 60px;
+}
+
+.lh10 {
+  line-height: 1em;
+}
+.lh11 {
+  line-height: 1.1em;
+}
+.lh12 {
+  line-height: 1.2em;
+}
+.lh13 {
+  line-height: 1.3em;
+}
+.lh14 {
+  line-height: 1.4em;
+}
+.lh15 {
+  line-height: 1.5em;
+}
+.lh16 {
+  line-height: 1.6em;
+}
+.lh17 {
+  line-height: 1.7em;
+}
+.lh18 {
+  line-height: 1.8em;
+}
+.lh19 {
+  line-height: 1.9em;
+}
+.lh20 {
+  line-height: 2em;
+}
+.lh21 {
+  line-height: 2.1em;
+}
+.lh22 {
+  line-height: 2.2em;
+}
+.lh23 {
+  line-height: 2.3em;
+}
+.lh24 {
+  line-height: 2.4em;
+}
+.lh25 {
+  line-height: 2.5em;
+}
+
+.fw300 {
+  font-weight: 300;
+}
+.fw400 {
+  font-weight: 400;
+}
+.fw500 {
+  font-weight: 500;
+}
+.fw600 {
+  font-weight: 600;
+}
+.fw700 {
+  font-weight: 700;
+}
+.fw800 {
+  font-weight: 800;
+}
+.fw900 {
+  font-weight: 900;
+}
+
+.ls70 {
+  letter-spacing: 0.07em;
+}
+.ls200 {
+  letter-spacing: 0.2em;
+}
+.ls25 {
+  letter-spacing: 0.025em;
+}
