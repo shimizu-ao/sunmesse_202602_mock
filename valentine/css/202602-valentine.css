@@ -112,7 +112,9 @@ main {
 
 /* bg */
 .bg1 {
-  background: url(../img/common/bg.png) repeat-y center top / 100%, var(--pink1);
+  background:
+    url(../img/common/bg.png) repeat-y center top / 100%,
+    var(--pink1);
 }
 .bg2 {
   background: var(--pink2);
@@ -624,9 +626,8 @@ main {
   margin: 0 auto;
   position: relative;
   cursor: pointer;
-  background: #fff;
-  color: var(--red);
-  border: 1px solid var(--red);
+  background: var(--pink2);
+  color: #fff;
 }
 
 .toggle_title_other.rule_title {
@@ -650,7 +651,7 @@ main {
 .toggle_btn_other:after {
   display: block;
   content: "";
-  background-color: var(--red);
+  background-color: #fff;
   position: absolute;
   width: 3.4vw;
   height: 3px;
@@ -732,7 +733,7 @@ main {
   margin-bottom: 5px;
   display: flex;
   justify-content: space-between;
-  gap: 15px;
+  gap: 10px;
   font-size: 14px;
   font-weight: 400;
   line-height: 1.4;
