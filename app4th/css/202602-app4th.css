@@ -279,7 +279,8 @@ button {
 
 /* マイページ */
 /* マイページモーダル */
-.newsWrap {
+.newsWrap,
+.modalWrap {
   position: absolute;
   width: 90%;
   max-width: 340px;
@@ -1324,31 +1325,6 @@ input[type="checkbox"]:checked:before {
   transform: rotate(45deg);
 }
 
-.modal_inner {
-  /* display: none; */
-  position: absolute;
-  width: 90%;
-  max-width: 355px;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  padding: 5px;
-  z-index: 999;
-  background: #b38015;
-  background: linear-gradient(
-    90deg,
-    rgba(179, 128, 21, 1) 0%,
-    rgba(247, 218, 145, 1) 56%,
-    rgba(243, 196, 83, 1) 100%
-  );
-}
-.modalWrap {
-  position: relative;
-  padding: 45px 7.5% 40px;
-  background: #fff;
-}
-
 @media only screen and (max-width: 640px) {
   .wrap {
     width: 100%;
@@ -1768,7 +1744,9 @@ select.receiptDate {
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
   opacity: 0;
-  transition: opacity 0.5s, transform 0s 0.5s;
+  transition:
+    opacity 0.5s,
+    transform 0s 0.5s;
   transform: scale(0);
 }
 .popup_trigger {

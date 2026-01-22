@@ -1,6 +1,6 @@
 <!-- @format -->
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
   <head>
     <meta charset="utf-8" />
@@ -51,10 +51,7 @@
     <!-- End Google Tag Manager -->
   </head>
 
-  <?php
-  date_default_timezone_set('Asia/Tokyo');
-  $cpToday = date("Ymd"); //今日の日付
-?>
+  <?php date_default_timezone_set('Asia/Tokyo'); $cpToday = date("Ymd"); //今日の日付 ?>
 
   <body class="tousen">
     <!-- 当選者は.tousenをつけてください -->
@@ -537,7 +534,7 @@
           <div class="cpFrame">
             <div class="answerBg">
               <img src="img/common/answer_view02.png" alt="" />
-              <a href="quiz.html" class="w90 mt25"
+              <a href="quiz.html" class="w90 mt25 btn_mdl" data-mdl="modal01"
                 ><img src="img/lp/btn_join.png" alt="参加する"
               /></a>
             </div>
@@ -549,13 +546,30 @@
 
     <div id="modalNews" class="modal">
       <div class="modal_bg close"></div>
-
       <div class="newsWrap">
         <p class="modal_cross close"></p>
         <p class="newsTxt">
           抽選可能な<br />
           コインがあります
         </p>
+      </div>
+    </div>
+
+    <div id="modal01" class="modal">
+      <div class="modal_bg close"></div>
+      <div class="modalWrap pt50 pb30">
+        <p class="modal_cross close"></p>
+        <div class="inner">
+          <a href=""><img src="img/lp/btn_app.png" alt="アプリ会員様はこちら" /></a>
+          <p class="tac fs10">（アプリが起動します）</p>
+          <ul class="noteList fs10 mt05 mb20">
+            <li>
+              ご利用の環境によって画面下部の「アプリで参加する」ボタンを押してもアプリが起動しない場合がございます。アプリが起動しない場合は一度この画面を閉じてアプリアイコンをタップして起動してください。
+            </li>
+          </ul>
+          <a href="カード会員様はこちら" class="mb10"><img src="img/lp/btn_card.png" alt="" /></a>
+          <a href="会員様以外はこちら"><img src="img/lp/btn_nomember.png" alt="" /></a>
+        </div>
       </div>
     </div>
 
