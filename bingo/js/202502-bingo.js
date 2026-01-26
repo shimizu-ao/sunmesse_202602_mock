@@ -88,24 +88,23 @@ const overViewSwiper01 = new Swiper(".productSlider", {
   },
 
   // If we need pagination
-
-  pagination: {
-    el: ".swiper-pagination", //必須の設定：ページネーションのclass指定
-    type: "bullets",
-    clickable: "clickable",
-  },
+  // pagination: {
+  //   el: ".swiper-pagination",
+  //   type: "bullets",
+  //   clickable: "clickable",
+  // },
 
   // Navigation arrows
-  navigation: {
-    nextEl: ".swiper-products-button-next",
-    prevEl: ".swiper-products-button-prev",
-  },
+  // navigation: {
+  //   nextEl: ".swiper-products-button-next",
+  //   prevEl: ".swiper-products-button-prev",
+  // },
 
   // And if we need scrollbar
-  // scrollbar: {
-  // 	el: ".swiper-scrollbar",
-  // 	draggable: true,
-  // },
+  scrollbar: {
+    el: ".swiper-scrollbar",
+    draggable: true,
+  },
 });
 
 const makerSlider = new Swiper(".makerSlider", {

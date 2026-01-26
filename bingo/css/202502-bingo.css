@@ -66,8 +66,20 @@ main {
   }
 }
 
+/* font */
+@font-face {
+  font-family: "axis";
+  src:
+    url(../font/AxisStd-Heavy.ttf) format("truetype"),
+    url(../font/AxisStd-Heavy.woff) format("woff");
+}
+
 :root {
+  --bg: #ffdf00;
+  --orange: #f9ac17;
+  --red: #ff0000;
   --mplus: "M PLUS 1", sans-serif;
+  --axis: "axis", sans-serif;
 }
 
 /* 事前エントリー */
@@ -95,85 +107,73 @@ main {
     width: 100%;
   }
 }
-.contentWrap {
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-  background: #fff;
-  border-radius: 2px;
-}
 
 /* bg */
-.bgRed {
-  background: url(../img/common/bg.png) repeat-y center / 100% #e60012;
+.bg {
+  background: url(../img/common/bg.png) repeat-y center / 100% var(--bg);
 }
-.bgGreen {
-  background: url(../img/common/bg.png) repeat-y center / 100% #45b035;
+.bg2 {
+  background: var(--orange);
 }
-.bgBlue {
-  background: url(../img/common/bg.png) repeat-y center / 100% #036eb8;
-}
-
-/* font */
-
-@font-face {
-  font-family: "gothicmb";
-  src:
-    url(../font/gothicmb.ttf) format("truetype"),
-    url(../font/gothicmb.woff) format("woff");
-}
-
-@font-face {
-  font-family: "keifont";
-  src:
-    url(../font/keifont.ttf) format("truetype"),
-    url(../font/keifont.woff) format("woff");
+.frame {
+  background: #fff;
+  border: 1px solid #000;
+  border-radius: 12px;
 }
 
 /* ttl */
 .ttl {
-  margin-bottom: 15px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #000;
+  background: var(--red);
+  font-family: var(--mplus);
+  font-weight: 700;
+  color: #fff;
+  font-size: 28px;
+  border-radius: 12px 12px 0 0;
 }
 
 /* btn */
 .btn {
   position: relative;
   width: 100%;
-  height: 45px;
-  display: flex;
+  height: 50px;
+  display: flex !important;
   justify-content: center;
   align-items: center;
   font-size: 18px;
-  font-weight: 700;
-  border-radius: 22px;
+  font-weight: 600;
+  border-radius: 25px;
   color: #fff;
-  font-family: "M PLUS 1", sans-serif;
 }
-.btn01::after,
-.btnBack::after,
-.btnApply::after {
-  content: "";
-  width: 10px;
-  height: 10px;
+.arrow {
   position: absolute;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%) rotate(45deg);
+  right: 15px;
+  display: flex;
+}
+.arrow::after {
+  content: "";
+  width: 20px;
+  height: 4px;
+  border-bottom: solid 1px;
+  border-right: solid 1px;
+  transform: skew(45deg);
 }
 .btn01 {
-  color: #004098;
-  background: #fff100;
-}
-.btn01::after {
-  border-top: solid 1px #004098;
-  border-right: solid 1px #004098;
+  background: var(--bg);
+  color: #000;
 }
 .btn02 {
-  line-height: 1.1;
-  border: 1px solid #004098;
-  color: #004098;
-  background: #fff;
-  font-size: 16px;
+  background: var(--red);
+  color: #fff;
+  border: 1px solid #000;
+  font-size: 21px;
+  font-family: var(--mplus);
+  letter-spacing: 0.075em;
+  font-weight: 700;
 }
 .btnApply {
   background: #b2b2b2;
@@ -199,18 +199,15 @@ main {
   border-right: solid 1px #e60012;
 }
 .btnSearch {
-  gap: 5px;
-  line-height: 1.1;
-  color: #fff100;
-  background: #004098;
-  font-size: 16px;
+  gap: 10px;
+  color: #fff;
+  background: #000;
 }
 .btnSearch::after {
   content: "";
   width: 15px;
   height: 15px;
   position: relative;
-  bottom: -3px;
   background: url(../img/second/search.png) no-repeat center / contain;
 }
 .btnClm {
@@ -293,82 +290,70 @@ main {
   background: url(../img/lp/bg.png) repeat-y center top / 100%;
 }
 .stepWrap {
-  background: #fff;
-  padding: 0 0 20px;
+  width: 88%;
   margin: 0 auto;
-  border-radius: 2px;
-  overflow: hidden;
 }
 .stepTitle {
-}
-.stepTitleTxt {
-  color: #036eb8;
-  text-align: center;
-  font-size: 20px;
-  font-family: "keifont", sans-serif;
-}
-.stepNo {
-  margin-bottom: 20px;
-  width: 100%;
-  height: 35px;
+  padding-bottom: 5px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  background: #c3e6f9;
-  color: #036eb8;
-  font-weight: 900;
-  font-size: 18px;
+  gap: 10px;
+  border-bottom: 1px solid #000;
+}
+.stepTitleTxt {
+  font-size: 19px;
+  font-family: var(--mplus);
+  font-weight: 700;
+}
+.stepNo {
+  width: 60px;
 }
 .stepTxt {
   margin-top: 15px;
 }
 .stepDesc {
-  line-height: 1.5;
-  font-size: 14px;
+  line-height: 1.4;
+  font-size: 16px;
   font-weight: 500;
 }
 .stepArrow {
-  margin: 25px auto;
+  margin: 20px auto 10px;
   width: 0;
   height: 0;
   border-style: solid;
   border-right: 16px solid transparent;
   border-left: 16px solid transparent;
-  border-top: 18px solid #fff;
+  border-top: 12px solid #000;
   border-bottom: 0;
-}
-
-.stepAttention {
-  display: block;
-  margin-top: 5px;
-  font-size: 12px;
-  line-height: 1.6;
 }
 
 /* セイムスアプリ限定スタイル */
 .stepAppTxt {
+  display: inline-block;
   margin: 15px 0 5px;
   font-weight: 500;
   font-size: 12px;
   text-align: center;
   line-height: 1.2;
   text-align: center;
-  color: #036eb8;
+  text-decoration: underline;
+  text-decoration-color: var(--bg);
 }
+
 .stepAppTxt2 {
-  width: fit-content;
-  display: flex;
+  width: 72%;
+  margin: 50px auto 0;
+  /* display: flex;
   align-items: center;
   justify-content: center;
   gap: 5px;
-  margin: 0 auto 5px;
   color: #fff100;
   font-size: 16px;
   font-family: "keifont", sans-serif;
   background-image: linear-gradient(to right, #fff100 5px, transparent 5px);
   background-size: 12px 2px;
   background-repeat: repeat-x;
-  background-position: left bottom;
+  background-position: left bottom; */
 }
 /* .stepAppTxt2::before,
 .stepAppTxt2::after {
@@ -390,26 +375,21 @@ main {
 
 /* ダウンロードボタン */
 .downloadWrap {
-  width: 90%;
-  padding: 15px 30px;
+  width: 270px;
+  padding: 15px 20px;
   margin-left: auto;
   margin-right: auto;
   background: #fff;
-  border: 2px solid #036eb8;
+  border: 1px solid #000;
 }
 .downloadTitle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-bottom: 5px;
+  padding-bottom: 10px;
   font-size: 14px;
   font-weight: 500;
   line-height: 1.2;
   text-align: center;
-  border-bottom: 1px solid #036eb8;
 }
 .downloadBtnWrap {
-  padding: 10px 0 0;
   position: relative;
   display: flex;
   gap: 10px;
@@ -440,40 +420,45 @@ main {
   letter-spacing: 0;
 }
 
-/* Wチャンス */
-.stepChanceWrap {
-  padding: 10px;
-  margin: 30px auto 0;
-  width: 90%;
-  border: 1px solid #e4007f;
-}
-.stepChanceTtl {
-  margin: -25px 0 0;
-  position: relative;
-  left: -30px;
-  display: block;
-  width: 90px;
-}
-
-.stepChanceTxt {
+/* ----------参加フォーム--------------*/
+.formTxt {
+  margin-bottom: 20px;
   font-size: 14px;
+  text-align: center;
+  font-weight: 600;
 }
-
-/* ----------参加フォー--------------*/
-
-#form .agreeBtn {
-  margin-right: auto;
-  margin-left: auto;
+.agreeWrap {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-weight: 500;
+  gap: 8px;
+  font-weight: 600;
   font-size: 16px;
-  gap: 5px;
 }
-#form .checkImg {
-  width: 20px;
-  padding-top: 5px;
+.agreeWrap * {
+  cursor: pointer;
+}
+.agreeCheck {
+  position: relative;
+  width: 14px !important;
+  height: 14px;
+  border: 1.5px solid #000;
+  vertical-align: -5px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0 !important;
+}
+.agreeCheck:checked:before {
+  position: absolute;
+  top: -5px;
+  left: 2px;
+  transform: rotate(50deg);
+  width: 9px;
+  height: 16px;
+  border-right: 2px solid var(--red);
+  border-bottom: 2px solid var(--red);
+  content: "";
 }
 
 /* アンケート */
@@ -531,57 +516,61 @@ main {
 
 /* -----------参加完了 ----------- */
 .completeBg {
-  padding: 100px 0;
+  padding: 70px 0;
   background: url(../img/second/bg_complete.png) no-repeat center top / 100%;
 }
+.completeFrame {
+  width: 90%;
+  margin: 0 auto;
+  padding: 80px 0 50px;
+  background: #fff;
+  border: 2px solid var(--red);
+  border-radius: 12px;
+}
 .completeTxt {
-  margin-bottom: 40px;
-  font-family: "keifont", sans-serif;
-  font-size: 26px;
-  color: #fff;
+  margin-bottom: 30px;
+  font-size: 23px;
+  font-family: var(--mplus);
   text-align: center;
+  font-weight: 900;
 }
 
 /* -----------参加状況 ----------- */
 #status {
-  margin-top: 10px;
+  padding: 5px;
+  height: 60px;
   display: flex;
-  gap: 10px;
-}
-.statusBox {
-  padding: 20px 0 10px;
-  width: 50%;
-  background: #fff;
-  border: 2px solid #e4007f;
-  text-align: center;
-  font-family: "keifont", sans-serif;
-  line-height: 1;
+  background: #000;
+  border-radius: 3px;
+  align-items: center;
 }
 .statusLabel {
-  margin-bottom: 10px;
-  color: #e4007f;
-  font-size: 19px;
+  padding: 0 10px;
+  color: #fff;
+  font-size: 16px;
+  font-family: var(--mplus);
+  font-weight: 700;
+  line-height: 1.2;
 }
 .statusRsl {
-  margin: 0 auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: baseline;
   padding: 0 5px;
-  width: fit-content;
-  position: relative;
-  font-size: 33px;
-  z-index: 1;
-}
-.statusRsl::after {
-  content: "";
-  position: absolute;
-  bottom: 5px;
-  left: 0;
-  width: 100%;
-  height: 8px;
-  background: rgba(228, 0, 127, 0.5);
-  z-index: -1;
+  height: 100%;
+  flex: 1;
+  text-align: right;
+  background: #fff;
+  font-size: 22px;
+  border-radius: 3px;
+  font-family: var(--axis);
+  line-height: 1.2;
 }
 .statusRslDt {
-  font-size: 58px;
+  padding-right: 5px;
+  font-size: 40px;
+  color: var(--red);
+  letter-spacing: -0.07em;
 }
 /* .statusTtl1 {
   text-align: center;
@@ -726,100 +715,96 @@ main {
 
 /* -----------ビンゴ ----------- */
 .bingoCount {
-  margin-bottom: 5px;
+  position: relative;
+  width: fit-content;
+  margin: 0 auto 5px;
   display: flex;
   align-items: baseline;
   justify-content: center;
   line-height: 1;
-  font-family: "keifont", sans-serif;
-  color: #fff;
-  font-size: 28px;
+  font-weight: 900;
+  font-size: 30px;
 }
 .bingoCount::before,
 .bingoCount::after {
   content: "";
-  position: relative;
-  bottom: -3px;
-  width: 3px;
-  height: 30px;
-  background: #fff;
-
-  border-radius: 2px;
+  width: 0;
+  height: 0;
+  position: absolute;
+  bottom: 0;
+  border-style: solid;
+  border-right: 3px solid transparent;
+  border-left: 3px solid transparent;
+  border-top: 35px solid #000;
+  border-bottom: 0;
 }
 .bingoCount::before {
-  margin-right: 10px;
-  transform: rotate(-25deg);
+  left: -20px;
+  transform: rotate(-22deg);
 }
 .bingoCount::after {
-  margin-left: 10px;
-  transform: rotate(25deg);
+  right: -20px;
+  transform: rotate(22deg);
 }
 .bingoCountData {
-  font-size: 40px;
+  font-size: 43px;
+  color: var(--red);
+  font-family: var(--axis);
 }
 .bingoWrap {
-  padding: 30px 0 10px;
-  background: #e4007f;
-  border: 8px solid #fff;
+  padding: 10px 10px 5px;
+  background: var(--red);
+  border: 3px solid;
+  border-radius: 3px;
 }
 .bingoTtl {
-  position: relative;
-  width: 67%;
-  min-width: 230px;
-  margin: 0 auto 10px;
-}
-.bingoTtl::before,
-.bingoTtl::after {
-  content: "";
-  position: absolute;
-  top: -25px;
-  width: 30px;
-  height: 30px;
-}
-.bingoTtl::before {
-  left: -40px;
-  background: url(../img/second/bingo_left.png) no-repeat center / contain;
-}
-.bingoTtl::after {
-  right: -40px;
-  background: url(../img/second/bingo_right.png) no-repeat center / contain;
+  margin: 0 auto;
+  border: 0.5px solid #fff;
 }
 .bingoMasu {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 5px;
+  background: #fff;
+  border: 3px solid #fff;
 }
 .bingoMasu .masu {
   position: relative;
-  width: calc(100% / 3 - 4px);
+  width: calc(100% / 3);
   cursor: pointer;
+  border-bottom: 1px solid #000;
+  border-left: 1px solid #000;
 }
-.bingoMasu .masu .bingoClear {
-  width: 90%;
-  display: none;
+.bingoMasu .masu:nth-child(3n) {
+  border-right: 1px solid;
+}
+.bingoMasu .masu:nth-child(-n + 3) {
+  border-top: 1px solid;
+}
+.bingoMasu .masu.clear::after {
+  content: "";
+  width: 90px;
+  height: 90px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
-}
-.bingoMasu .clear .bingoClear {
-  display: block;
+  background: url(../img/second/bingo_clear.png) no-repeat center / contain;
 }
 .bingoTxt {
-  margin-top: 10px;
   color: #fff;
-  font-size: 15px;
+  font-size: 16px;
   text-align: center;
-  font-family: "keifont", sans-serif;
+  font-family: var(--mplus);
+  font-weight: 800;
 }
 .bingoComp .bingoCount,
 .completeItem {
   display: none !important;
 }
 .bingoComp .completeItem {
-  display: block !important;
+  display: flex !important;
 }
 
 /* -----------マイページ賞品応募 ----------- */
@@ -1193,14 +1178,14 @@ main {
 
 /* 規約アコーディオン */
 .toggle_title_other.rule_btn {
-  /* color: #004098;
-  border: 1px solid #004098;
-  background: #fff; */
+  color: #000;
+  border: 1px solid #000;
+  background: #fff;
 }
 
 .toggle_btn_other.rule_toggle:before,
 .toggle_btn_other.rule_toggle:after {
-  background-color: #e60012;
+  background-color: #000;
 }
 
 .toggle_btn_other:before {
@@ -1425,18 +1410,17 @@ main {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  padding: 30px;
+  padding: 15px 2.5% 25px;
   z-index: 999;
   text-align: center;
-  background: #fff;
-  border: 4px solid #e4007f;
+  border-width: 2px;
 }
 .modal_inner.clear::before {
   content: "";
   width: 90px;
   height: 90px;
   position: absolute;
-  top: -50px;
+  top: -20px;
   left: -30px;
   background: url("../img/second/bingo_clear.png") no-repeat center / contain;
 }
@@ -1452,8 +1436,8 @@ main {
 .modalBatsu::after {
   display: inline-block;
   content: "";
-  background-color: #e4007f;
-  width: 2px;
+  background-color: #000;
+  width: 1px;
   height: 100%;
 }
 .modalBatsu::before {
@@ -1462,39 +1446,52 @@ main {
 .modalBatsu::after {
   transform: rotate(45deg);
 }
+.modalLogo {
+  width: 100px;
+  margin: 0 auto;
+  display: block;
+}
 .modalName {
   position: relative;
-  font-family: "keifont", sans-serif;
+  margin: 10px 0 20px;
   text-align: center;
-  font-size: 21px;
-  line-height: 1.2;
+  font-size: 23px;
+  line-height: 1.1;
   z-index: 1;
+  font-weight: 700;
 }
 .modalName span {
   font-size: 14px;
 }
 .modalImg {
-  margin: -20px auto 0;
-  width: 200px;
+  position: relative;
+  margin: 0 auto;
+  width: 180px;
 }
 .modalImg img {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
+.modalImg::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: -55px;
+  width: 55px;
+  height: 50px;
+  background: url(../img/second/icon_recomend.png) no-repeat center / contain;
+}
+.modalList_head {
+  margin-top: 20px;
+  background: #000;
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+}
 .modalList {
-  max-height: 300px;
-  padding-top: 10px;
-  background-image: linear-gradient(
-    to right,
-    #e4007f,
-    #e4007f 5px,
-    transparent 5px,
-    transparent 5px
-  );
-  background-size: 12px 2px;
-  background-position: left top;
-  background-repeat: repeat-x;
+  max-height: 200px;
+  padding: 5px;
 }
 .modalpd {
   padding: 5px 0 0;
@@ -1561,6 +1558,17 @@ main {
   content: none;
 }
 
+/* スクロールバー */
+.swiper-scrollbar {
+  width: 88% !important;
+  margin: 10px auto 0;
+  position: inherit !important;
+  background: var(--bg);
+}
+.swiper-scrollbar-drag {
+  background: var(--red);
+}
+
 /* -----------------------
   form
 -------------------------- */
@@ -1594,7 +1602,7 @@ input[type="password"]:focus {
   font-size: 16px;
   font-weight: 400;
 }
-input[type="checkbox"] {
+/* input[type="checkbox"] {
   position: relative;
   width: 14px;
   height: 14px;
@@ -1619,7 +1627,7 @@ input[type="checkbox"]:checked::before {
   border-right: 2px solid #fff;
   border-bottom: 2px solid #fff;
   content: "";
-}
+} */
 input[type="image"] {
   width: 100%;
 }
@@ -1821,7 +1829,7 @@ select:-moz-focusring {
   width: 90%;
 }
 .fixBtnTxt {
-  width: 65%;
+  width: 75%;
   display: block;
   margin: 0 auto;
 }
@@ -1884,16 +1892,17 @@ select:-moz-focusring {
   position: relative;
   width: 50%;
   padding: 8px 0;
-  color: #e60012;
+  color: #fff;
   text-align: center;
-  background-color: #fff100;
+  background-color: #000;
+  border: 1px solid #fff;
 }
-.btnFootNav:nth-child(-n + 2) {
+/* .btnFootNav:nth-child(-n + 2) {
   border-bottom: solid 1px #e60012;
 }
 .btnFootNav:nth-child(2n) {
   border-left: solid 1px #e60012;
-}
+} */
 .btnFootNav a {
   position: absolute;
   top: 0;
