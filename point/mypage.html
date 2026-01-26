@@ -79,36 +79,41 @@
 
       <!-- 参加状況に合わせて、#statusに下記クラスを付与してください。
                 購入あり→.statusActive
+                上限→.statusMax
             -->
-      <section id="status" class="mt40 inner statusActive">
+      <section id="status" class="mt40 inner statusMax">
         <h2 class="ttl">
           <img src="img/second/ttl_status.png" alt="参加状況" />
         </h2>
         <div class="statusFrame pt30 pb20">
           <div class="inner88">
-            <ul class="status01">
-              <li>
-                <p class="status01_cat"><img src="img/common/parts_a.png" alt="A" /></p>
-                <p class="status01_txt"><span class="fs12">お好きな</span>花王商品</p>
-                <p class="status01_data"><span class="status01_dataNum">0</span>個</p>
-              </li>
-              <li>
+            <div class="statusItem col1">
+              <p class="status01_cat"><img src="img/common/parts_a.png" alt="A" /></p>
+              <p class="status01_txt fs15 w70 tac">花 王</p>
+              <p class="status01_data fs27"><span class="status01_dataNum fs60 mr05">0</span>個</p>
+            </div>
+            <p class="statusPlus">+</p>
+            <ul class="status_flex">
+              <li class="statusItem col3">
                 <p class="status01_cat"><img src="img/common/parts_b.png" alt="B" /></p>
                 <p class="status01_txt">日清食品</p>
                 <p class="status01_data"><span class="status01_dataNum">0</span>個</p>
               </li>
-              <li>
+              <li class="statusItem col3">
                 <p class="status01_cat"><img src="img/common/parts_c.png" alt="C" /></p>
-                <p class="status01_txt">明治</p>
+                <p class="status01_txt">明 治</p>
                 <p class="status01_data"><span class="status01_dataNum">0</span>個</p>
               </li>
-              <li>
+              <li class="statusItem col3">
                 <p class="status01_cat"><img src="img/common/parts_d.png" alt="D" /></p>
-                <p class="status01_txt">サントリー飲料</p>
+                <p class="status01_txt">サントリー</p>
                 <p class="status01_data"><span class="status01_dataNum">0</span>個</p>
               </li>
             </ul>
             <p class="statusArrow"></p>
+            <p class="itemMax statusMax_txt">
+              <img src="img/second/txt_max.png" alt="上限に達成しました" />
+            </p>
             <div class="status02">
               <p class="status02_ttl">獲得セイムスポイント</p>
               <div class="status02_wrap">
@@ -119,6 +124,7 @@
           </div>
         </div>
         <ul class="noteList mt15">
+          <li>セイムスポイントは最大1,000ポイントまでの進呈となります。</li>
           <li>
             セイムスポイントはキャンペーン終了月、翌月の中旬ごろ進呈予定です。諸事情により、セイムスポイントの進呈が多少前後する場合もございます。あらかじめご了承ください。
           </li>
@@ -127,11 +133,11 @@
       <!-- 参加状況 -->
 
       <div class="bg02 mt40 pt50 pb80">
-        <section id="summary" class="">
+        <section id="summary">
           <h2 class="ttl"><img src="img/common/ttl_cp.png" alt="キャンペーン内容" /></h2>
-          <div class="frame pb20">
+          <div class="frame pb30">
             <img src="img/common/cp_view.png" alt="" />
-            <ul class="noteList inner88 mt20">
+            <ul class="noteList inner88 mt10">
               <li>
                 セイムスポイントはキャンペーン終了月、翌月の中旬ごろ進呈予定です。諸事情により、セイムスポイントの進呈が多少前後する場合もございます。あらかじめご了承ください。
               </li>
@@ -149,7 +155,7 @@
               <p class="pdCat_num">
                 <span><img src="img/common/parts_a.png" alt="A" /></span>
               </p>
-              <h3 class="pdCat_name"><span class="fs17">お好きな</span>花王商品</h3>
+              <h3 class="pdCat_name">花王</h3>
               <div class="swiper productSlider01 mt20">
                 <ul class="swiper-wrapper">
                   <li class="swiper-slide">
@@ -200,13 +206,25 @@
                   <li class="swiper-slide">
                     <img src="img/common/product/product_a_16.png" alt="" />
                   </li>
+                  <li class="swiper-slide">
+                    <img src="img/common/product/product_a_17.png" alt="" />
+                  </li>
+                  <li class="swiper-slide">
+                    <img src="img/common/product/product_a_18.png" alt="" />
+                  </li>
+                  <li class="swiper-slide">
+                    <img src="img/common/product/product_a_19.png" alt="" />
+                  </li>
+                  <li class="swiper-slide">
+                    <img src="img/common/product/product_a_20.png" alt="" />
+                  </li>
                 </ul>
               </div>
               <div class="swiper-scrollbar sp_scroll01"></div>
             </div>
             <dl class="toggle_contents_other mt20 inner88">
               <dt class="toggle_title_other btn">
-                カテゴリー<span class="fs20">A</span>の対象商品
+                カテゴリ<span class="fs20">A</span>の対象商品
                 <span class="toggle_btn_other"></span>
               </dt>
               <dd class="toggle_contents_other_bk">
@@ -563,14 +581,14 @@
                 </ul>
               </dd>
             </dl>
-            <!-- カテゴリーA -->
+            <!-- カテゴリA -->
 
             <div class="swiperInner tac mt30">
               <p class="pdCat_num">
                 <span><img src="img/common/parts_b.png" alt="B" /></span>
               </p>
               <h3 class="pdCat_name">日清食品</h3>
-              <p class="fw700 fs14">カップ麺・袋麺・インスタント麺</p>
+              <p class="fw700 fs14">カップ麺・袋麺・即席ライス各種</p>
               <div class="swiper productSlider02 mt20">
                 <ul class="swiper-wrapper">
                   <li class="swiper-slide">
@@ -597,7 +615,7 @@
             </div>
             <dl class="toggle_contents_other mt20 inner88">
               <dt class="toggle_title_other btn">
-                カテゴリー<span class="fs20">B</span>の対象商品
+                カテゴリ<span class="fs20">B</span>の対象商品
                 <span class="toggle_btn_other"></span>
               </dt>
               <dd class="toggle_contents_other_bk">
@@ -834,13 +852,13 @@
                 </ul>
               </dd>
             </dl>
-            <!-- カテゴリーB -->
+            <!-- カテゴリB -->
             <div class="swiperInner tac mt30">
               <p class="pdCat_num">
                 <span><img src="img/common/parts_c.png" alt="C" /></span>
               </p>
               <h3 class="pdCat_name">明治</h3>
-              <p class="fw700 fs14">チョコ・アイス</p>
+              <p class="fw700 fs14">チョコ・アイス各種</p>
               <div class="swiper productSlider03 mt20">
                 <ul class="swiper-wrapper">
                   <li class="swiper-slide">
@@ -867,7 +885,7 @@
             </div>
             <dl class="toggle_contents_other mt20 inner88">
               <dt class="toggle_title_other btn">
-                カテゴリー<span class="fs20">C</span>の対象商品
+                カテゴリ<span class="fs20">C</span>の対象商品
                 <span class="toggle_btn_other"></span>
               </dt>
               <dd class="toggle_contents_other_bk">
@@ -1345,12 +1363,13 @@
                 </ul>
               </dd>
             </dl>
-            <!-- カテゴリーC -->
+            <!-- カテゴリC -->
             <div class="swiperInner tac mt30">
               <p class="pdCat_num">
                 <span><img src="img/common/parts_d.png" alt="D" /></span>
               </p>
-              <h3 class="pdCat_name">サントリー飲料</h3>
+              <h3 class="pdCat_name">サントリー</h3>
+              <p class="fw700 fs14">ソフトドリンク各種</p>
               <div class="swiper productSlider04 mt20">
                 <ul class="swiper-wrapper">
                   <li class="swiper-slide">
@@ -1377,7 +1396,7 @@
             </div>
             <dl class="toggle_contents_other mt20 inner88">
               <dt class="toggle_title_other btn">
-                カテゴリー<span class="fs20">D</span>の対象商品
+                カテゴリ<span class="fs20">D</span>の対象商品
                 <span class="toggle_btn_other"></span>
               </dt>
               <dd class="toggle_contents_other_bk">
@@ -1842,10 +1861,11 @@
                 </ul>
               </dd>
             </dl>
-            <!-- カテゴリーD -->
+            <!-- カテゴリD -->
 
             <ul class="noteList mt15 inner88">
               <li>⼀部お取り扱いのない商品、店舗がございます。</li>
+              <li>サントリー飲料はノンアルコール、酒類、健康食品は対象外となります。</li>
             </ul>
           </div>
         </section>

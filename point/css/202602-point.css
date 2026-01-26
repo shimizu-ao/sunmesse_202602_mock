@@ -515,19 +515,21 @@ body.scroll-disable {
   border: 2px solid #000;
   border-radius: 30px;
 }
-.status01 {
+.status_flex {
   display: flex;
-  flex-wrap: wrap;
-  gap: 30px 10px;
+  justify-content: space-between;
+  gap: 6px;
 }
-.status01 li {
-  padding-bottom: 10px;
+.statusItem {
+  padding-bottom: 15px;
   display: flex;
   align-items: center;
   flex-direction: column;
-  width: calc(100% / 2 - 5px);
   border: 1px solid;
   border-radius: 4px;
+}
+.statusItem.col3 {
+  width: calc(100% / 3 - 3px);
 }
 .status01_cat {
   margin-top: -20px;
@@ -546,28 +548,39 @@ body.scroll-disable {
   border-radius: 10px;
   font-family: var(--ff_axisB);
   font-weight: 700;
-  font-size: 15px;
+  font-size: 14px;
 }
+
 .status01_data {
   margin-top: auto;
   line-height: 1;
   font-family: var(--ff_axisH);
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 900;
 }
 .status01_dataNum {
-  padding-right: 5px;
-  font-size: 54px;
+  font-size: 46px;
+}
+.statusPlus {
+  margin-bottom: 20px;
+  font-weight: 600;
+  text-align: center;
+  font-size: 50px;
+  line-height: 1;
 }
 .statusArrow {
   margin: 15px auto;
   width: 0;
   height: 0;
   border-style: solid;
-  border-right: 19px solid transparent;
-  border-left: 19px solid transparent;
-  border-top: 20px solid;
+  border-right: 22px solid transparent;
+  border-left: 22px solid transparent;
+  border-top: 18px solid;
   border-bottom: 0;
+}
+.statusMax_txt {
+  margin: 0 auto 5px;
+  width: 66%;
 }
 .status02 {
   padding: 10px 15px;
@@ -635,7 +648,8 @@ body.scroll-disable {
 #status.statusMax .itemMax {
   display: block;
 }
-#status.statusActive .status02_dataNum {
+#status.statusActive .status02_dataNum,
+#status.statusMax .status02_dataNum {
   color: #e50000;
 }
 
@@ -1941,6 +1955,9 @@ select:-moz-focusring {
 }
 
 /* margin-right */
+.mr05 {
+  margin-right: 5px;
+}
 .mr10 {
   margin-right: 10px;
 }
