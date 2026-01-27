@@ -1,6 +1,6 @@
 <!-- @format -->
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
   <head>
     <meta charset="utf-8" />
@@ -11,24 +11,24 @@
 
     <meta
       name="description"
-      content="LINE連携キャンペーン！ つながって毎日抽選キャンペーン｜2026.1.14-2.8｜富士薬品ドラッグストアグループ"
+      content="LINE連携キャンペーン！ シークレットセールの招待状GET!｜2026.2.16-17｜富士薬品ドラッグストアグループ"
     />
-    <meta property="og:url" content="http://drugstore.seims.co.jp/lp/202601-line/" />
+    <meta property="og:url" content="http://drugstore.seims.co.jp/lp/202602-secret/" />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="img/common/mv.png" />
     <meta
       property="og:title"
-      content="LINE連携キャンペーン！ つながって毎日抽選キャンペーン｜2026.1.14-2.8｜富士薬品ドラッグストアグループ"
+      content="LINE連携キャンペーン！ シークレットセールの招待状GET!｜2026.2.16-17｜富士薬品ドラッグストアグループ"
     />
     <meta
       property="og:description"
-      content="LINE連携キャンペーン！ つながって毎日抽選キャンペーン｜2026.1.14-2.8｜富士薬品ドラッグストアグループ"
+      content="LINE連携キャンペーン！ シークレットセールの招待状GET!｜2026.2.16-17｜富士薬品ドラッグストアグループ"
     />
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="css/202601-line.css" />
+    <link rel="stylesheet" href="css/202602-secret.css" />
     <!-- font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -52,12 +52,9 @@
     <!-- End Google Tag Manager -->
   </head>
 
-  <?php
-  date_default_timezone_set('Asia/Tokyo');
-  $cpToday = date("Ymd"); //今日の日付
-?>
+  <?php date_default_timezone_set('Asia/Tokyo'); $cpToday = date("Ymd"); //今日の日付 ?>
 
-  <body>
+  <body class="">
     <!-- Google Tag Manager (noscript) -->
     <noscript
       ><iframe
@@ -71,61 +68,91 @@
 
     <title>
       LINE連携キャンペーン！
-      つながって毎日抽選キャンペーン｜2026.1.14-2.8｜富士薬品ドラッグストアグループ
+      シークレットセールの招待状GET!｜2026.2.16-17｜富士薬品ドラッグストアグループ
     </title>
 
     <main class="wrap bg pb70">
+      <!-- bodyタグへの.yokokuの付与で当日前と当日後で切り替えをおこなってください。 -->
       <section id="mv">
         <img
-          src="img/common/mv.png"
-          alt="LINE連携キャンペーン！ つながって毎日抽選キャンペーン｜2026.1.14-2.8｜富士薬品ドラッグストアグループ"
+          src="img/common/mv_before.png"
+          alt="LINE連携キャンペーン！ シークレットセールの招待状GET!｜2026.2.16-17｜富士薬品ドラッグストアグループ"
+          class="cpBefore"
+        />
+        <img
+          src="img/common/mv_after.png"
+          alt="LINE連携キャンペーン！ シークレットセールの招待状GET!｜2026.2.16-17｜富士薬品ドラッグストアグループ"
+          class="cpAfter"
         />
       </section>
 
-      <section id="summary" class="pt80">
-        <div class="frame">
-          <img src="img/common/summary_view.png" alt="" />
-          <a href="" class="w90 mt10">
-            <p class="btn06Head">公式LINEとセイムス会員番号を連携しよう</p>
-            <p class="btn btn06">連携はこちら</p></a
-          >
+      <section id="time" class="mt50">
+        <img src="img/common/character.png" alt="" class="time_chara" />
+        <div class="frame pt30 pb20 tac">
+          <div class="cpBefore">
+            <p class="time_txt">クーポン獲得まで…</p>
+            <!-- <p class="time_count"><span>5</span>日</p> -->
+            <!-- 残り１日前までの場合 -->
+            <p class="time_count">
+              <span>00</span>時間<span>00</span>分<span>00</span>秒<span>00</span>
+            </p>
+            <!-- 残り24時間の場合 -->
+          </div>
+          <div class="cpAfter">
+            <p class="time_txt">クーポン獲得終了まで…</p>
+            <p class="time_count">
+              <span>00</span>時間<span>00</span>分<span>00</span>秒<span>00</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="summary" class="mt30">
+        <div class="inner90">
+          <div class="summary_note">
+            <img src="img/common/summary_view1_before.png" alt="" class="cpBefore" />
+            <div class="cpAfter">
+              <img src="img/common/summary_view1_after.png" alt="" class="" />
+              <div class="inner mt20">
+                <a href="" data-target="modal01" class="btn btn01 modalBtn">クーポン獲得はこちら</a>
+                <ul class="noteList mt15">
+                  <li>
+                    クーポン獲得前にLINEアカウントとセイムス会員番号の連携をお願いいたします 。
+                  </li>
+                  <li>
+                    クーポンはLINEのトーク画面に配信されております。トーク画面をご確認ください
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <img src="img/common/summary_view1_bottom.png" alt="" />
+        </div>
+
+        <div class="frame mt30">
+          <img src="img/common/summary_view2.png" alt="" class="" />
+          <div class="inner mt20">
+            <p class="btnHead1">公式LINEとセイムス会員番号を連携しよう</p>
+            <a href="" class="btn btn01">連携はこちら</a>
+          </div>
           <div class="summaryBtm">
             <p class="inner">
-              <a href="" class="btn btn05 fs17 modalBtn" data-target="modal02"
+              <a href="" class="btn btn02 fs17 modalBtn" data-target="modal02"
                 >セイムスアプリを
                 <br />
                 お持ちでない方はこちら</a
               >
-              <a href="" class="btn btn01 fs17 mt10"
+              <a href="" class="btn btn03 fs17 mt10"
                 >公式LINEお友だちに<br />
                 なるにはこちら</a
               >
             </p>
           </div>
         </div>
-        <div class="inner80 mt60">
-          <div class="">
-            <p class="btnTop">ボタンを押して抽選にチャレンジしよう！</p>
-            <a href="" id="" class="btn btn06 modalBtn" data-target="modal01"
-              >抽選にチャレンジする</a
-            >
-          </div>
-          <div class="">
-            <p class="btnTop">ボタンを押して抽選にチャレンジしよう！</p>
-            <a href="" id="" class="btn btn06">抽選は公式LINEから</a>
-          </div>
-          <a href="" class="btn03">抽選済みの方はこちら</a>
-          <ul class="noteList mt25 colorW">
-            <li>抽選にご参加する前にセイムス会員番号の連携をお願いいたします。</li>
-            <li>
-              当選クーポンはLINEのトーク画面に配信されております。トーク画面をご確認ください。
-            </li>
-          </ul>
-        </div>
       </section>
       <!-- キャンペーン概要 -->
 
-      <section id="flow" class="">
+      <section id="flow" class="mt30">
         <div class="frame pb20">
           <h2 class="ttl mb20">
             <img src="img/common/ttl_flow.png" alt="セイムス会員番号連携方法" />
@@ -235,9 +262,8 @@
       <div class="modal_inner frame">
         <div class="inner">
           <span class="close modal_cross"></span>
-          <a href="" class="btn btn01 fs17">セイムス会員番号<br />連携済みの方</a>
-          <a href="" class="btn btn05 mt20 fs17">セイムス会員番号<br />未連携の方</a>
-          <a href="" class="btn btn05 mt10 fs17">セイムス会員番号<br />未連携の方</a>
+          <a href="" class="btn btn03 fs17">セイムス会員番号<br />連携済みの方</a>
+          <a href="" class="btn btn02 mt10 fs17">セイムス会員番号<br />未連携の方</a>
           <ul class="noteList mt20">
             <li>抽選にご参加する前にセイムス会員番号の連携をお願いいたします。</li>
           </ul>
@@ -297,7 +323,7 @@
         </div>
         <ul id="footerNav">
           <li>
-            <a href="https://drugstore.seims.co.jp/lp/202601-line/_tos/" target="_blank"
+            <a href="https://drugstore.seims.co.jp/lp/202306-bonusweek/_tos/" target="_blank"
               >本キャンペーン規約</a
             >
           </li>
@@ -314,7 +340,10 @@
         <div class="fixBtnItem">
           <a href="app.html" onclick="clickBtn()" class="">
             <!-- <img src="img/lp/btn_top.png" alt="参加はアプリから" class="fixBtnTxt" /> -->
-            <p class="btn btn04">抽選にチャレンジする</p>
+            <div class="cpBefore"><p class="btn btn01 f_lineEb">連携はこちら</p></div>
+            <div class="cpAfter">
+              <p class="btn btn01 cpAfter f_lineEb">クーポン獲得はこちら</p>
+            </div>
           </a>
         </div>
       </div>
@@ -324,6 +353,6 @@
     <!-- js -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-    <script src="js/202601-line.js"></script>
+    <script src="js/202602-secret.js"></script>
   </body>
 </html>
