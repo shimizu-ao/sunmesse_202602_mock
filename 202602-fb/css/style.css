@@ -817,7 +817,7 @@ menu
 }
 .pd_btn > a {
   position: relative;
-  gap: 5px;
+  gap: 0;
   width: 50%;
   height: 45px;
   border-radius: 22px;
