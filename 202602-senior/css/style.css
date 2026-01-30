@@ -643,13 +643,14 @@ menu
 .couponWrap {
   width: 75%;
   margin: 0 auto;
-  border: 2px solid #544540;
+  border: 1px solid #544540;
+  box-shadow: 2px 2px 0 #544540;
 }
 .couponWrap {
   /* display: none; */
   display: block;
   margin: 0 auto;
-  background: #ccc;
+
   width: 70%;
   height: auto;
   padding: 1px;
