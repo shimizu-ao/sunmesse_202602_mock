@@ -829,6 +829,7 @@ menu
   justify-content: center;
   gap: 10px;
   line-height: 1;
+  text-align: center;
 }
 .pd_btn > a::after {
   content: "";
