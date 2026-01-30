@@ -101,17 +101,17 @@ const overViewSwiper02 = new Swiper(".productSlider2", swiperConfig);
 $(document).ready(function () {
   var currentMonth = new Date().getMonth();
 
-  //   var today = new Date("2026-01-01");
-  //  var currentMonth = today.getMonth();
+  // var today = new Date("2026-03-01");
+  // var currentMonth = today.getMonth();
 
-  if (currentMonth === 10 || currentMonth === 11) {
-    // 12月の場合
-    $(".mth12").css("display", "flex");
-    $(".mth1").css("display", "none");
-  } else if (currentMonth === 0) {
+  if (currentMonth === 0 || currentMonth === 1) {
     // 1月の場合
-    $(".mth12").css("display", "none");
-    $(".mth1").css("display", "flex");
+    $(".mth02").css("display", "flex");
+    $(".mth03").css("display", "none");
+  } else if (currentMonth === 2) {
+    // 2月の場合
+    $(".mth02").css("display", "none");
+    $(".mth03").css("display", "flex");
   }
 });
 

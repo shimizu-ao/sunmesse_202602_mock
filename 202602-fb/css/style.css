@@ -659,16 +659,22 @@ menu
 }
 .coupon_txt::after {
   transform: rotate(20deg); */
-
+.couponFlex {
+  display: flex;
+  gap: 10px;
+}
 .couponWrap {
   /* display: none; */
-  display: block;
-  margin: 0 auto;
-  background: #ccc;
+
   height: auto;
-  padding: 1px;
+  padding: 2px;
   aspect-ratio: 1/1;
   border-radius: 7px;
+  overflow: hidden;
+  background: var(--brown);
+  border: 3px solid #fff;
+  outline: 1px solid var(--green2);
+  box-shadow: 4px 4px 0 var(--green2);
 }
 .swiper-slide {
   background: #fff;
