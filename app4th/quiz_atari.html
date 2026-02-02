@@ -1,6 +1,6 @@
 <!-- @format -->
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
   <head>
     <meta charset="utf-8" />
@@ -51,10 +51,7 @@
     <!-- End Google Tag Manager -->
   </head>
 
-  <?php
-  date_default_timezone_set('Asia/Tokyo');
-  $cpToday = date("Ymd"); //今日の日付
-?>
+  <?php date_default_timezone_set('Asia/Tokyo'); $cpToday = date("Ymd"); //今日の日付 ?>
 
   <body class="">
     <!-- sectionにclass'entry'をつけたら、.entryBeforeが表示。ローンチ後は、.entry削除すると.entryAfterが表示 -->
@@ -75,6 +72,7 @@
     <div class="wrap bgR pt15 pb15">
       <section id="quiz" class="quizWrap2">
         <img src="img/second/view_quiz-atari.png" alt="正解" />
+        <p class="quizeatariNote">※当選ではありません。</p>
         <p class="quizDesc">
           プレゼントの発表は<br />
           当選者様への通知をもって<br />
