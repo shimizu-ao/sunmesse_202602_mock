@@ -264,6 +264,21 @@ body.scroll-disable {
   letter-spacing: -0.05em;
   text-indent: -0.05em;
 }
+#status .stampList .stampTxt {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  line-height: 1;
+  font-size: 14px;
+  text-align: center;
+  font-weight: 700;
+}
+#status .stampList .stampTxt_month {
+  font-size: 20px;
+}
 #status .stampList li.get {
   background: none;
 }
@@ -273,6 +288,12 @@ body.scroll-disable {
   width: 55px;
   height: 55px;
   background: url(../img/second/stamp.png) no-repeat center/ contain;
+}
+#status .stampList li.get:is(:first-child, :nth-child(10), :last-child)::after {
+  background: url(../img/second/stamp_get.png) no-repeat center/ contain;
+}
+#status .stampList li.get .stampTxt {
+  display: block;
 }
 
 #status .stampPages {
@@ -310,11 +331,14 @@ body.scroll-disable {
   right: -20px;
 }
 .countArea {
-  height: 70px;
+  padding: 10px;
+  background: var(--green);
+}
+.countData {
+  padding: 0 10px;
+  height: 50px;
   display: flex;
   align-items: center;
-  padding: 10px 20px;
-  background: var(--green);
   color: #fff;
   font-family: var(--round);
   font-weight: 700;
@@ -346,28 +370,55 @@ body.scroll-disable {
 .statusGet .countDt {
   color: #fff100;
 }
-
-/* スタンプ切替 */
-#status .stampList li .getStamp {
-  display: none;
+.countArea_history {
+  margin-top: 10px;
+  position: relative;
+  border-radius: 3px;
+  overflow: hidden;
+  background: linear-gradient(var(--opacity), var(--opacity)), #fff;
 }
-#status .stampList li.get .getStamp {
+.countArea_history .historyTtl {
+  height: 25px;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-family: var(--round);
+  font-size: 15px;
+  font-weight: 700px;
+  background: var(--red);
 }
-#status .stampList li.get .noStamp {
-  display: none;
+.countArea_history .historyList {
+  padding: 5px 10px;
 }
-#status .stampList li.active .getStamp,
-#status .stampList li.active .noStamp {
-  display: none;
+.historyList_item {
+  padding: 5px;
+  line-height: 1.4;
+  font-size: 14px;
+}
+.historyList_item:not(:last-child) {
+  border-bottom: 1px solid #848484;
+}
+.historyList_item .month {
+  color: var(--red);
+  font-family: var(--round);
+  font-weight: 700;
+}
+.historyList_item .data {
+  text-indent: 1em;
 }
 
 /*次ページ表示切替 */
-
 #status.statusNext .itemNext {
   display: flex;
 }
 #status .itemNext {
+  display: none;
+}
+#status.statusGet .itemGet {
+  display: flex;
+}
+#status .itemGet {
   display: none;
 }
 
